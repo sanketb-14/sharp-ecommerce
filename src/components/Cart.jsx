@@ -1,8 +1,15 @@
-const Cart = ({ isOpen, toggleCart, cartItems, removeProduct }) => {
+import { useCart } from "../context/CartContext";
+
+const Cart = ({ isOpen, toggleCart }) => {
+
+    const {cartItems , removeProduct} = useCart()
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+
+  console.log(cartItems);
+  
 
   return (
     <>
