@@ -44,7 +44,7 @@ function App() {
                   />
                 </svg>
                 <span className="badge badge-sm indicator-item bg-secondary text-white">
-                  0
+                  {cartItems.length}
                 </span>
               </div>
             </button>
