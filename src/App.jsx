@@ -9,6 +9,8 @@ const About = React.lazy(() => import("./pages/About"));
 const Home = React.lazy(() => import("./pages/Home"));
 const Products = React.lazy(() => import("./pages/Products"));
 
+const Movies = React.lazy(() => import("./pages/Movies"))
+
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const {cartItems}  = useCart()
@@ -41,6 +43,16 @@ function App() {
                     }
                   >
                     Home
+                  </NavLink>
+                  <NavLink to= "/movies" 
+                  end
+
+                   className={({ isActive }) => 
+                      `btn btn-ghost ${isActive ? 'text-indigo-600 bg-indigo-50' : 'text-base-content'}`
+                  }
+                    >
+                      Movies
+                    
                   </NavLink>
                   <NavLink 
                     to="/products" 
@@ -103,6 +115,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/about" element={<About />} />
+              <Route path="movies" element={<Movies/>} />
             </Routes>
           </Suspense>
 
